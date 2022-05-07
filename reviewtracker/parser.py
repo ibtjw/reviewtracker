@@ -44,7 +44,8 @@ class ReviewTrackerParser():
             reviews.append({
                 'title': titleDiv.text.strip(),
                 'content': contentDiv.text.strip(),
-                'author': authorDiv.text.strip(),
+                'author': authorDiv.text.strip().split(maxsplit=1)[0],
+                'location': authorDiv.text.strip().split(maxsplit=2)[2],
                 'loan_type': loanType.text.strip(),
                 'stars': numStarsDiv.text.strip().replace('(', '').replace(')', ' '),
                 'date': dateDiv.text.strip(),

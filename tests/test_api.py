@@ -22,6 +22,9 @@ def test_parse_reviews(client: testing.FlaskClient):
         assert 'author' in review
         assert len(review['author']) > 0
 
+        assert 'location' in review
+        assert len(review['location']) > 0
+
         assert 'date' in review
         assert len(review['date']) > 0
 
